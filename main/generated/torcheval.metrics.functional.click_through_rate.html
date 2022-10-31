@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>torcheval.metrics.functional.multiclass_recall &mdash; TorchEval main documentation</title>
+  <title>torcheval.metrics.functional.click_through_rate &mdash; TorchEval main documentation</title>
   
 
   
@@ -32,8 +32,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="torcheval.metrics.functional.multilabel_accuracy" href="torcheval.metrics.functional.multilabel_accuracy.html" />
-    <link rel="prev" title="torcheval.metrics.functional.multiclass_precision_recall_curve" href="torcheval.metrics.functional.multiclass_precision_recall_curve.html" />
+    <link rel="next" title="torcheval.metrics.functional.frequency_at_k" href="torcheval.metrics.functional.frequency_at_k.html" />
+    <link rel="prev" title="torcheval.metrics.functional.topk_multilabel_accuracy" href="torcheval.metrics.functional.topk_multilabel_accuracy.html" />
   <!-- Google Analytics -->
   
   <!-- End Google Analytics -->
@@ -294,13 +294,13 @@
         
           <li><a href="../torcheval.metrics.functional.html">Functional Metrics</a> &gt;</li>
         
-      <li>torcheval.metrics.functional.multiclass_recall</li>
+      <li>torcheval.metrics.functional.click_through_rate</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
         
             
-            <a href="../_sources/generated/torcheval.metrics.functional.multiclass_recall.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+            <a href="../_sources/generated/torcheval.metrics.functional.click_through_rate.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
           
         
       </li>
@@ -326,68 +326,37 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="torcheval-metrics-functional-multiclass-recall">
-<h1>torcheval.metrics.functional.multiclass_recall<a class="headerlink" href="#torcheval-metrics-functional-multiclass-recall" title="Permalink to this heading">¶</a></h1>
+  <section id="torcheval-metrics-functional-click-through-rate">
+<h1>torcheval.metrics.functional.click_through_rate<a class="headerlink" href="#torcheval-metrics-functional-click-through-rate" title="Permalink to this heading">¶</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="torcheval.metrics.functional.multiclass_recall">
-<span class="sig-prename descclassname"><span class="pre">torcheval.metrics.functional.</span></span><span class="sig-name descname"><span class="pre">multiclass_recall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v1.13)"><span class="pre">Tensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v1.13)"><span class="pre">Tensor</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">average</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'micro'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v1.13)"><span class="pre">Tensor</span></a></span></span><a class="headerlink" href="#torcheval.metrics.functional.multiclass_recall" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute recall score, which is calculated as the ratio between the number of
-true positives (TP) and the total number of actual positives (TP + FN).
-Its class version is <code class="docutils literal notranslate"><span class="pre">torcheval.metrics.MultiClassRecall</span></code>.</p>
+<dt class="sig sig-object py" id="torcheval.metrics.functional.click_through_rate">
+<span class="sig-prename descclassname"><span class="pre">torcheval.metrics.functional.</span></span><span class="sig-name descname"><span class="pre">click_through_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v1.13)"><span class="pre">Tensor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v1.13)"><span class="pre">Tensor</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_tasks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v1.13)"><span class="pre">Tensor</span></a></span></span><a class="headerlink" href="#torcheval.metrics.functional.click_through_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the click through rate given a click events.
+Its class version is <code class="docutils literal notranslate"><span class="pre">torcheval.metrics.ClickThroughRate</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>input</strong> (<em>Tensor</em>) – Tensor of label predictions
-It could be the predicted labels, with shape of (n_sample, ).
-It could also be probabilities or logits with shape of (n_sample, n_class).
-<code class="docutils literal notranslate"><span class="pre">torch.argmax</span></code> will be used to convert input into predicted labels.</p></li>
-<li><p><strong>target</strong> (<em>Tensor</em>) – Tensor of ground truth labels with shape of (n_sample, ).</p></li>
-<li><p><strong>num_classes</strong> – Number of classes.</p></li>
-<li><p><strong>average</strong> – <ul>
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">'micro'</span></code> [default]:</dt><dd><p>Calculate the metrics globally, by using the total true positives and false
-negatives across all classes.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">'macro'</span></code>:</dt><dd><p>Calculate metrics for each class separately, and return their unweighted
-mean. Classes with 0 true and predicted instances are ignored.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">'weighted'</span></code>:</dt><dd><p>Calculate metrics for each class separately, and return their average weighted
-by the number of instances for each class in the <code class="docutils literal notranslate"><span class="pre">target</span></code> tensor. Classes with
-0 true and predicted instances are ignored.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">None</span></code>:</dt><dd><p>Calculate the metric for each class separately, and return
-the metric for every class.</p>
-</dd>
-</dl>
-</li>
-</ul>
-</p></li>
+<li><p><strong>input</strong> (<em>Tensor</em>) – Series of values representing user click (1) or skip (0)
+of shape (num_events) or (num_objectives, num_events).</p></li>
+<li><p><strong>weights</strong> (<em>Tensor</em><em>, </em><em>Optional</em>) – Weights for each event, tensor with the same shape as input.</p></li>
+<li><p><strong>num_tasks</strong> (<em>int</em>) – Number of tasks that need weighted_calibration calculation. Default value
+is 1.</p></li>
 </ul>
 </dd>
 </dl>
 <p>Examples:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">torch</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">torcheval.metrics.functional.classification</span> <span class="kn">import</span> <span class="n">multiclass_recall</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">target</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">multiclass_recall</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-<span class="go">tensor(0.5000)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">multiclass_recall</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="go">tensor([1., 0., 0., 1.])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">multiclass_recall</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s2">&quot;macro&quot;</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="go">tensor(0.5000)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">multiclass_recall</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-<span class="go">tensor(0.5000)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">torcheval.metrics.functional</span> <span class="kn">import</span> <span class="n">click_through_rate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">click_through_rate</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+<span class="go">tensor(0.5)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">weights</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">click_through_rate</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+<span class="go">tensor(0.58333)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">weights</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">click_through_rate</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">num_tasks</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">tensor([0.6667, 0.4])</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -402,10 +371,10 @@ the metric for every class.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="torcheval.metrics.functional.multilabel_accuracy.html" class="btn btn-neutral float-right" title="torcheval.metrics.functional.multilabel_accuracy" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="torcheval.metrics.functional.frequency_at_k.html" class="btn btn-neutral float-right" title="torcheval.metrics.functional.frequency_at_k" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="torcheval.metrics.functional.multiclass_precision_recall_curve.html" class="btn btn-neutral" title="torcheval.metrics.functional.multiclass_precision_recall_curve" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="torcheval.metrics.functional.topk_multilabel_accuracy.html" class="btn btn-neutral" title="torcheval.metrics.functional.topk_multilabel_accuracy" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -437,8 +406,8 @@ the metric for every class.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">torcheval.metrics.functional.multiclass_recall</a><ul>
-<li><a class="reference internal" href="#torcheval.metrics.functional.multiclass_recall"><code class="docutils literal notranslate"><span class="pre">multiclass_recall()</span></code></a></li>
+<li><a class="reference internal" href="#">torcheval.metrics.functional.click_through_rate</a><ul>
+<li><a class="reference internal" href="#torcheval.metrics.functional.click_through_rate"><code class="docutils literal notranslate"><span class="pre">click_through_rate()</span></code></a></li>
 </ul>
 </li>
 </ul>
